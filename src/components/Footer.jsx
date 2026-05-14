@@ -7,10 +7,14 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-4">
-              <div className="w-11 h-11 rounded-full overflow-hidden border-2 border-primary/50 shadow-lg shadow-primary/20">
-                <img src="/wd-films-logo.png" alt="W&D Films Logo" className="w-full h-full object-cover" />
-              </div>
-              <span className="font-heading font-bold text-xl text-white">W&D <span className="text-primary">Films</span></span>
+              <img
+                src="/wd-films-logo.png"
+                alt="W&D Films Logo"
+                width={48}
+                height={48}
+                className="w-12 h-12 rounded-full object-cover border border-yellow-500/40 shadow-lg shadow-primary/20"
+              />
+              <span className="text-xl font-bold text-white tracking-wide">W&D Films</span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm mb-6">
               Your destination for premium Sinhala cinema, short films, and original productions. Stream the best of Sri Lankan filmmaking.
