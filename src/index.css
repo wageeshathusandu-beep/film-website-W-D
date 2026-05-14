@@ -239,46 +239,130 @@ body {
   border-radius: 2px;
 }
 
-/* ===== Premium Cinematic Navbar ===== */
-.navbar-glass {
-  background: rgba(5, 5, 10, 0.85);
-  backdrop-filter: blur(24px) saturate(1.4);
-  -webkit-backdrop-filter: blur(24px) saturate(1.4);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+/* ===== ULTRA PREMIUM CINEMATIC NAVBAR ===== */
+
+/* Navbar states */
+.cinema-navbar-scrolled {
+  background: rgba(3, 3, 8, 0.92);
+  backdrop-filter: blur(30px) saturate(1.5);
+  -webkit-backdrop-filter: blur(30px) saturate(1.5);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.06);
   box-shadow:
-    0 4px 30px rgba(0, 0, 0, 0.4),
-    0 1px 0 rgba(212, 175, 55, 0.05) inset;
+    0 4px 40px rgba(0, 0, 0, 0.6),
+    0 1px 0 rgba(212, 175, 55, 0.04) inset,
+    0 -1px 30px rgba(0, 0, 0, 0.3) inset;
 }
 
-/* Brand text premium glow */
-.navbar-brand-text {
+.cinema-navbar-top {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+}
+
+/* Logo Border - Gold ring with gradient */
+.cinema-logo-border {
+  border: 1.5px solid transparent;
+  background-image: linear-gradient(to bottom right, #111, #000), linear-gradient(135deg, #d4af37, #f5e6a3, #d4af37, #8b6914);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow:
+    0 0 12px rgba(212, 175, 55, 0.15),
+    0 0 4px rgba(212, 175, 55, 0.1) inset;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.group:hover .cinema-logo-border {
+  box-shadow:
+    0 0 20px rgba(212, 175, 55, 0.3),
+    0 0 8px rgba(212, 175, 55, 0.2) inset;
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+/* Logo inner text - gold/silver gradient */
+.cinema-logo-text {
+  background: linear-gradient(135deg, #d4af37 0%, #f5e6a3 40%, #ffffff 50%, #f5e6a3 60%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-family: 'Montserrat', sans-serif;
-  text-shadow:
-    0 0 10px rgba(212, 175, 55, 0.15),
-    0 0 30px rgba(212, 175, 55, 0.05);
-  letter-spacing: 0.08em;
 }
 
-/* Nav link hover glow effect */
-.nav-link-premium {
-  position: relative;
-  letter-spacing: 0.02em;
+/* Animated light sweep on logo */
+.cinema-logo-sweep {
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 40%,
+    rgba(255, 255, 255, 0.08) 45%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.08) 55%,
+    transparent 60%,
+    transparent 100%
+  );
+  background-size: 250% 100%;
+  animation: logoSweep 4s ease-in-out infinite;
 }
 
-.nav-link-premium::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 8px;
-  background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+@keyframes logoSweep {
+  0%, 100% { background-position: 200% 0; }
+  50% { background-position: -100% 0; }
 }
 
-.nav-link-premium:hover::before {
-  opacity: 1;
+/* Brand title - gold/white gradient text */
+.cinema-brand-title {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #ffffff 0%, #f5e6a3 30%, #d4af37 60%, #f5e6a3 80%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.1));
+  transition: filter 0.5s ease;
 }
 
-.nav-link-premium:hover {
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+.group:hover .cinema-brand-title {
+  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.2));
+}
+
+/* Brand subtitle */
+.cinema-brand-subtitle {
+  color: rgba(212, 175, 55, 0.5);
+  font-family: 'Inter', sans-serif;
+  transition: color 0.4s ease;
+}
+
+.group:hover .cinema-brand-subtitle {
+  color: rgba(212, 175, 55, 0.75);
+}
+
+/* Nav link underline - gold gradient */
+.cinema-nav-underline {
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.8), rgba(245, 230, 163, 0.9), rgba(212, 175, 55, 0.8));
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.4);
+}
+
+/* Nav link hover text glow */
+.cinema-nav-link:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+/* Mobile menu button */
+.cinema-mobile-btn {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+}
+
+.cinema-mobile-btn:hover {
+  border-color: rgba(212, 175, 55, 0.25);
+  background: rgba(212, 175, 55, 0.05);
+}
+
+/* Mobile panel */
+.cinema-mobile-panel {
+  background: rgba(5, 5, 10, 0.95);
+  backdrop-filter: blur(30px) saturate(1.3);
+  -webkit-backdrop-filter: blur(30px) saturate(1.3);
+  border: 1px solid rgba(212, 175, 55, 0.06);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.7),
+    0 0 1px rgba(212, 175, 55, 0.1) inset;
 }
