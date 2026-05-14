@@ -238,3 +238,47 @@ body {
   background: linear-gradient(90deg, #e50914, #00d4ff);
   border-radius: 2px;
 }
+
+/* ===== Premium Cinematic Navbar ===== */
+.navbar-glass {
+  background: rgba(5, 5, 10, 0.85);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.4),
+    0 1px 0 rgba(212, 175, 55, 0.05) inset;
+}
+
+/* Brand text premium glow */
+.navbar-brand-text {
+  font-family: 'Montserrat', sans-serif;
+  text-shadow:
+    0 0 10px rgba(212, 175, 55, 0.15),
+    0 0 30px rgba(212, 175, 55, 0.05);
+  letter-spacing: 0.08em;
+}
+
+/* Nav link hover glow effect */
+.nav-link-premium {
+  position: relative;
+  letter-spacing: 0.02em;
+}
+
+.nav-link-premium::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-link-premium:hover::before {
+  opacity: 1;
+}
+
+.nav-link-premium:hover {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
